@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: redis-cache-spring-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cache_demo
+    username: cache_user
+    password: cache_password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+
+app:
+  cache:
+    product-ttl-seconds: 30

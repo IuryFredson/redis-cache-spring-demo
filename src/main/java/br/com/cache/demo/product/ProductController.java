@@ -1,5 +1,6 @@
 package br.com.cache.demo.product;
 
+import br.com.cache.demo.cache.ProductLookupResponse;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,8 +27,13 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ProductResponse findById(@PathVariable Long id) {
+    public ProductLookupResponse findById(@PathVariable Long id) {
         return productService.findById(id);
+    }
+
+    @GetMapping("/{id}/no-cache")
+    public ProductLookupResponse findByIdWithoutCache(@PathVariable Long id) {
+        return productService.findByIdWithoutCache(id);
     }
 
     @PutMapping("/{id}")

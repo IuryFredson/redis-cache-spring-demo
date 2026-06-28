@@ -23,3 +23,5 @@ server:
 app:
   cache:
     product-ttl-seconds: 30
+  demo:
+    database-delay-ms: 120

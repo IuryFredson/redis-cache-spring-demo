@@ -43,7 +43,7 @@ Inicie a API:
 DB_PORT=5433 REDIS_PORT=6380 mvn spring-boot:run
 ```
 
-A aplicacao cria 20 produtos automaticamente se o banco estiver vazio.
+A aplicacao cria 200 produtos automaticamente se o banco estiver vazio.
 
 ## Endpoints
 

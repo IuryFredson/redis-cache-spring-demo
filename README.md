@@ -40,7 +40,7 @@ docker compose up -d
 Inicie a API:
 
 ```bash
-mvn spring-boot:run
+DB_PORT=5433 REDIS_PORT=6380 mvn spring-boot:run
 ```
 
 A aplicacao cria 20 produtos automaticamente se o banco estiver vazio.
@@ -149,7 +149,7 @@ Esses dados podem ser colados em uma planilha para gerar grafico comparando cons
 ## Roteiro da demonstracao
 
 1. Mostrar `docker compose up -d` com PostgreSQL e Redis.
-2. Iniciar a API com `mvn spring-boot:run`.
+2. Iniciar a API com `DB_PORT=5433 REDIS_PORT=6380 mvn spring-boot:run`.
 3. Listar produtos com `GET /products`.
 4. Invalidar o cache do produto 1.
 5. Consultar `GET /products/1` e mostrar `source: "DATABASE"`.
